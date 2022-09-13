@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Application;
+use \App\Commands\CustomCommand;
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+|
+|
+*/
+require_once __DIR__ .'/bootstrap/app.php';
+
+
+$command = new Application("RUN FrameWork Command line Interface (RunCLI) => ", "1.0.0 V");
+
+// ... register commands
+$command->add(new CustomCommand());
+// ...
+
+$command->run();

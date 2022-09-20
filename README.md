@@ -19,3 +19,6 @@
 
 Run is a nano API framework for building awesome small productive and scalable web apps.
  
+## Try the Framework 
+
+> composer create-project php-run/run "new_project_name"

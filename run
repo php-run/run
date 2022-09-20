@@ -1,8 +1,9 @@
 #!/usr/bin/env php
 <?php
 
+use App\Console\Commands\CustomCommand;
 use Symfony\Component\Console\Application;
-use \App\Commands\CustomCommand;
+
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader

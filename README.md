@@ -2,10 +2,12 @@
 
 <p align="center">
 
-[//]: # (<a href="https://travis-ci.org/php-run/framework"><img src="https://travis-ci.org/php-run/framework.svg" alt="Build Status"></a>)
-<a href="https://packagist.org/packages/php-run/framework"><img src="https://img.shields.io/packagist/dt/php-run/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/php-run/framework"><img src="https://img.shields.io/packagist/v/php-run/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/php-run/framework"><img src="https://img.shields.io/packagist/l/php-run/framework" alt="License"></a>
+[![Issues](https://img.shields.io/github/issues/php-run/framework.svg?style=flat-square)](https://github.com/php-run/framework/issues)
+[![Stars](https://img.shields.io/github/stars/php-run/framework.svg?style=flat-square)](https://github.com/php-run/framework/stargazers)
+[![Latest Version](https://img.shields.io/github/tag/php-run/framework.svg?style=flat-square&label=release)](https://github.com/php-run/framework/tags)
+[![Software License](https://img.shields.io/github/license/php-run/framework.svg?style=flat-square)](LICENSE)
+[![Total Downloads](https://img.shields.io/packagist/dt/php-run/framework.svg?style=flat-square)](https://packagist.org/packages/php-run/framework)
+
 </p>
 
 <p align="center"><a href="https://github.com/php-run/run" target="_blank">
@@ -19,6 +21,9 @@
 
 Run is a nano API framework for building awesome small productive and scalable web apps.
  
-## Try the Framework 
+## Try Run Framework 
 
-> composer create-project php-run/run "new_project_name"
+```php
+composer create-project php-run/run "your_project_name"
+```
+ 

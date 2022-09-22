@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Run'),
 
     /*
     |--------------------------------------------------------------------------
@@ -159,16 +159,25 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+        # Foundation Service Provider [Illuminate >> Contracts.Foundation,Http,Log,Support,Support,Testing,Testing,Validation]
+        Illuminate\Foundation\Providers\FoundationServiceProvider::class,
+        # Filesystem Register [Illuminate >> Support]
+        Illuminate\Filesystem\FilesystemServiceProvider::class,
+        # Console Commands Register [Illuminate >> Contracts,Database, Support]
+        Run\Steps\Console\Providers\ConsoleSupportServiceProvider::class,
+        # Database Register [Illuminate >> Contracts, Database, Support]
+        Illuminate\Database\DatabaseServiceProvider::class,
+        # Cache Register [Illuminate >> Contracts, Support]
+        Illuminate\Cache\CacheServiceProvider::class,
+        # Encryption Register [Illuminate >> Contracts, Support]
+        Illuminate\Encryption\EncryptionServiceProvider::class,
+
+
 //        Illuminate\Auth\AuthServiceProvider::class,
 //        Illuminate\Broadcasting\BroadcastServiceProvider::class,
 //        Illuminate\Bus\BusServiceProvider::class,
-//        Illuminate\Cache\CacheServiceProvider::class,
-//        Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
 //        Illuminate\Cookie\CookieServiceProvider::class,
-//        Illuminate\Database\DatabaseServiceProvider::class,
-//        Illuminate\Encryption\EncryptionServiceProvider::class,
-//        Illuminate\Filesystem\FilesystemServiceProvider::class,
-//        Illuminate\Foundation\Providers\FoundationServiceProvider::class,
+
 //        Illuminate\Hashing\HashServiceProvider::class,
 //        Illuminate\Mail\MailServiceProvider::class,
 //        Illuminate\Notifications\NotificationServiceProvider::class,
@@ -192,7 +201,7 @@ return [
         App\Providers\AppServiceProvider::class,
 //        App\Providers\AuthServiceProvider::class,
 //        // App\Providers\BroadcastServiceProvider::class,
-//        App\Providers\EventServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
     ],

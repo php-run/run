@@ -2,6 +2,8 @@
 use Illuminate\Foundation\Http\Kernel;
 use Illuminate\Http\Request;
 
+define('RUN_START', microtime(true));
+
 /*
 |--------------------------------------------------------------------------
 | Create The Application
@@ -27,13 +29,30 @@ $app = require __DIR__.'/../bootstrap/app.php';
 |
 */
 
+/*
+|--------------------------------------------------------------------------
+| Create Http Kernel
+|--------------------------------------------------------------------------
+*/
 
 $kernel = $app->make(Kernel::class);
 
+/*
+|--------------------------------------------------------------------------
+| Handel the Request Then Send the Response
+|--------------------------------------------------------------------------
+*/
 
+$request = Request::capture();
 
-$response = $kernel->handle(
-    $request = Request::capture()
-)->send();
+$response = $kernel->handle($request);
+
+$response->send();
+
+/*
+|--------------------------------------------------------------------------
+| Shutdown the Http Kernel
+|--------------------------------------------------------------------------
+*/
 
 $kernel->terminate($request, $response);

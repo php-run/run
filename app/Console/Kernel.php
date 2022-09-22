@@ -3,9 +3,9 @@
 namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
-use Run\Console\Kernel as ConsoleKernel;
+use Run\Steps\Console\RunConsoleKernel;
 
-class Kernel extends ConsoleKernel
+class Kernel extends RunConsoleKernel
 {
     /**
      * The Artisan commands provided by your application.
@@ -25,5 +25,16 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         //
+    }
+    /**
+     * Register the commands for the application.
+     *
+     * @return void
+     */
+    protected function commands()
+    {
+        $this->load(__DIR__.'/Commands');
+
+        require base_path('routes/console.php');
     }
 }

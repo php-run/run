@@ -1,8 +1,10 @@
 #!/usr/bin/env php
 <?php
 
-use App\Console\Commands\CustomCommand;
-use Symfony\Component\Console\Application;
+define('RUN_START', microtime(true));
+
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,13 +13,30 @@ use Symfony\Component\Console\Application;
 |
 |
 */
-require_once __DIR__ .'/bootstrap/app.php';
+$app = require __DIR__.'/bootstrap/app.php';
+
+/*
+|--------------------------------------------------------------------------
+| Run Console Kernel Then Handel the Command
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+$kernel = $app->make('Illuminate\Contracts\Console\Kernel');
 
 
-$command = new Application("RUN FrameWork Command line Interface (RunCLI) => ", "1.0.0 V");
+$status = $kernel->handle($input = new ArgvInput, new ConsoleOutput);
 
-// ... register commands
-$command->add(new CustomCommand());
-// ...
 
-$command->run();
+/*
+|--------------------------------------------------------------------------
+| Shutdown The Console
+|--------------------------------------------------------------------------
+|
+*/
+
+$kernel->terminate($input, $status);
+
+
+exit($status);
